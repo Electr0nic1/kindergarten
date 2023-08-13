@@ -122,7 +122,7 @@ body {
 
 .header__menu-list {
   display: flex;
-  width: 520px;
+  max-width: 520px;
   background-color: #7B6152;
   color: #FFF8F3;
   flex-direction: column;
@@ -133,7 +133,7 @@ body {
   right: 0;
   transform: translateY(-200%);
   transition: transform .5s ease;
-  z-index: 1;
+  z-index: 2;
   font-size: 20px;
 }
 
@@ -611,7 +611,7 @@ body {
   grid-template-columns: 4.45fr 1fr 2.625fr 1.23fr 4.9fr 1.6fr;
   align-items: center;
   justify-items: start;
-  padding-left: 152px;
+  padding: 0 84px 0 152px;
 }
 
 .price__list-line {
@@ -631,6 +631,8 @@ body {
 .price__descr {
   text-align: center;
   margin: 0 auto 40px;
+  position: relative;
+  z-index: 1;
 }
 
 .price__descr-text {
@@ -646,6 +648,8 @@ body {
 .price__links {
   display: flex;
   justify-content: center;
+  position: relative;
+  z-index: 1;
 }
 
 .price__online-btn {
@@ -694,7 +698,7 @@ body {
 }
 
 .discount__title {
-  margin: 0 auto;
+  margin: 0 auto 10px;
   font-size: 40px;
   font-weight: 700;
   color: #ff9b3f;
@@ -741,7 +745,7 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  width: 414px;
+  max-width: 414px;
 }
 
 .set__box-text {
@@ -777,7 +781,7 @@ body {
 }
 
 .swiper {
-  width: 713px;
+  max-width: 713px;
   height: 428px;
   position: relative;
   display: inline-block;
@@ -817,7 +821,7 @@ body {
   z-index: 1;
   position: relative;
   display: grid;
-  grid-template-columns: 713px auto;
+  grid-template-columns: 1fr auto;
   column-gap: 94px;
 }
 
@@ -944,12 +948,8 @@ body {
 }
 
 .languages__title {
-  font-size: 48px;
-  text-transform: uppercase;
-  font-weight: 700;
   color: #ff9b3f;
-  width: 564px;
-  margin-bottom: 40px
+  max-width: 564px;
 }
 
 .languages__list {
@@ -960,7 +960,7 @@ body {
 
 .languages__item {
   display: grid;
-  grid-template-columns: 266px 274px;
+  grid-template-columns: 1fr 1.03fr;
   column-gap: 24px;
   row-gap: 16px;
 }
@@ -984,10 +984,7 @@ body {
 }
 
 .reviews__title {
-  font-size: 48px;
-  font-weight: 700;
   max-width: 580px;
-  margin-bottom: 40px;
 }
 
 .reviews__title span {
@@ -1022,11 +1019,7 @@ body {
 
 .adaptation__title {
   width: 580px;
-  font-size: 48px;
-  font-weight: 700;
-  text-transform: uppercase;
   color: #ff9b3f;
-  margin-bottom: 40px;
 }
 
 .adaptation__box {
@@ -1064,8 +1057,6 @@ body {
 }
 
 .tour__title {
-  font-size: 48px;
-  font-weight: 700;
   margin-bottom: 64px;
   text-align: center;
 }
@@ -1075,7 +1066,7 @@ body {
 }
 
 .tour__bg {
-  width: 1160px;
+  max-width: 1160px;
   height: 412px;
   background-color: #F3F9DF;
   border-radius: 48px;
@@ -1090,7 +1081,7 @@ body {
 
 .tour__bg-2 {
   position: absolute;
-  top: 5;
+  top: 5px;
   right: -45px;
 }
 
@@ -1128,35 +1119,29 @@ body {
   padding-bottom: 100px;
 }
 
-.questions__title {
-  font-size: 48px;
-  font-weight: 700;
-  margin-bottom: 40px;
-}
-
 .questions__title span {
   color: #ff9b3f;
 }
 
-.accordeon__item {
+.accordion__item {
   background-color: #FAF2E4;
   margin-bottom: 8px;
   border-radius: 16px;
 }
 
-.accordeon__title {
+.accordion__title {
   font-weight: 700;
   font-size: 24px;
   display: block;
   background-color: transparent;
-  padding: 16px 40px;
+  padding: 16px 85px 16px 40px;
   position: relative;
   width: 100%;
   text-align: left;
-  height: 72px;
+  min-height: 72px;
 }
 
-.accordeon__title::after {
+.accordion__title::after {
   content: "";
   background-image: url(../images/arrow-y.svg);
   width: 40px;
@@ -1169,27 +1154,27 @@ body {
   background-position: center;
 }
 
-.accordeon__title.accordeon__title--active::after {
+.accordion__title.accordion__title--active::after {
   background-image: url(../images/arrow-t.svg);
 }
 
-.accordeon__text {
+.accordion__text {
   opacity: 0;
   max-height: 0;
   transition: opacity .3s, max-height .3s;
 }
 
-.accordeon__text.accordeon__text--visible {
+.accordion__text.accordion__text--visible {
   opacity: 1;
   background-color: #fff;
 }
 
-.accordeon__text-text {
+.accordion__text-text {
   max-width: 822px;
   padding: 0 40px 16px;
 }
 
-.accordeon__item:has(.accordeon__text--visible) {
+.accordion__item:has(.accordion__text--visible) {
   background-color: #fff;
 }
 
@@ -1202,15 +1187,13 @@ body {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  width: 1160px;
+  max-width: 1160px;
   height: 576px;
   border-radius: 40px;
   padding: 48px 56px;
 }
 
 .invite__title {
-  font-size: 64px;
-  font-weight: 700;
   line-height: 100%;
   margin-bottom: 16px;
 }
@@ -1229,7 +1212,7 @@ body {
 
 .invite__form-btn {
   display: flex;
-  width: 430px;
+  width: 414px;
   padding: 20px 30px;
   justify-content: center;
   align-items: center;
@@ -1254,14 +1237,12 @@ body {
 
 .contacts__inner {
   display: grid;
-  grid-template-columns: 415px auto;
+  grid-template-columns: 1fr 1.7fr;
   gap: 32px;
 }
 
 .contacts__title {
-  font-size: 48px;
-  font-weight: 700;
-  margin-bottom: 40px;
+  margin-bottom: 0px;
   grid-column-start: span 2;
 }
 
@@ -1277,7 +1258,7 @@ body {
   padding: 16px 24px;
   border-radius: 16px;
   background: #FAF2E4;
-  width: 415px;
+  max-width: 415px;
 }
 
 .contacts__info-address::before {
@@ -1291,7 +1272,7 @@ body {
 .contacts__info-item {
   border-radius: 16px;
   background: #FAF2E4;
-  width: 200px;
+  max-width: 200px;
   padding: 16px 24px;
 }
 
@@ -1337,7 +1318,7 @@ body {
 .contacts__info-link {
   border-radius: 60px;
   display: flex;
-  width: 415px;
+  max-width: 415px;
   padding: 20px 30px;
   justify-content: center;
   align-items: center;
@@ -1387,11 +1368,103 @@ body {
     position: relative;
     z-index: 1;
   }
+
+  .discount__img {
+    right: 0;
+  }
 }
 
 @media(max-width: 1250px) {
   .values__question-top-icon {
     right: 0;
+  }
+
+  .tour__bg-1 {
+    left: 0;
+  }
+
+  .tour__bg-2 {
+    right: 0;
+  }
+}
+
+@media(max-width: 1200px) {
+  .swiper {
+    max-width: 470px;
+  }
+
+  .team__inner {
+    grid-template-columns: 470px auto;
+    column-gap: 40px;
+  }
+
+  .team__interview {
+    margin: 0 auto;
+  }
+
+  .languages__list {
+    grid-template-columns: 1fr;
+  }
+
+  .languages__title {
+    margin: 0 auto 40px;
+  }
+
+  .languages__item-img {
+    justify-self: end;
+  }
+
+  .adaptation__box {
+    grid-template-columns: 1fr;
+  }
+
+  .adaptation__box-item {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .adaptation__box-title {
+    order: -1;
+  }
+
+  .adaptation__box-text {
+    order: -1;
+  }
+
+  .adaptation__box-line {
+    display: block;
+    width: 100%;
+  }
+
+  .adaptation__box-img+.adaptation__box-img {
+    margin-left: auto;
+  }
+
+  .adaptation__box-img {
+    order: 1;
+    margin: 0 auto;
+  }
+
+  .contacts__inner {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .contacts__info {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: none;
+    justify-content: center;
+  }
+
+  .contacts__info-soc {
+    padding-left: 60px;
+  }
+}
+
+@media(max-width: 1150px) {
+  .tour__video {
+    right: 90px;
   }
 }
 
@@ -1406,17 +1479,85 @@ body {
     display: flex;
     justify-content: center;
   }
+
+  .tour__video {
+    width: 877px;
+  }
+}
+
+@media(max-width: 1050px) {
+  .price__list-line {
+    display: none;
+  }
+
+  .price__list-item {
+    grid-template-columns: 5fr 4fr 5fr 1.6fr;
+    ;
+  }
+
+  .tour__video {
+    min-height: 438px;
+    right: 67px;
+    top: -12px;
+  }
 }
 
 @media(max-width: 1000px) {
   .header__address {
     display: none;
   }
+
+  .set__inner {
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .set__title {
+    margin: 0;
+  }
+
+  .languages__item {
+    grid-template-columns: 0.5fr 1fr;
+  }
+
+  .tour__bg {
+    margin: 0 auto;
+    max-width: 900px;
+    height: 321px;
+  }
+
+  .tour__video {
+    min-height: 350px;
+    width: 700px;
+    right: 97px;
+  }
 }
 
 @media(max-width: 940px) {
+  .header__menu-list {
+    gap: 8px;
+  }
+
   .methodology__list {
     grid-template-columns: repeat(2, 1fr);
+  }
+
+  .price__list-item {
+    padding: 0 40px;
+  }
+}
+
+@media(max-width: 900px) {
+  .swiper {
+    max-width: 227px;
+  }
+
+  .team__inner {
+    grid-template-columns: 227px auto;
+  }
+
+  .tour__video {
+    right: 77px;
   }
 }
 
@@ -1453,6 +1594,31 @@ body {
   .join__list-btn {
     margin: 0 auto;
     max-width: 300px;
+  }
+
+  .tour__bg {
+    max-width: 650px;
+    height: 250px;
+  }
+
+  .tour__video {
+    min-height: 250px;
+    width: 500px;
+    top: 0;
+  }
+
+  .tour__btn {
+    width: 280px;
+    top: 90px;
+  }
+}
+
+@media(max-width: 800px) {
+  .header__menu-list {
+    max-width: 500px;
+    gap: 7px;
+    padding: 20px;
+    font-size: 18px;
   }
 }
 
@@ -1535,6 +1701,86 @@ body {
     font-size: 20px;
   }
 
+  .price__box {
+    padding: 20px;
+  }
+
+  .price__list-link {
+    font-size: 13px;
+  }
+
+  .price__online-btn {
+    max-width: 260px;
+  }
+
+  .discount__title {
+    font-size: 32px;
+  }
+
+  .discount__text {
+    font-size: 28px;
+  }
+
+  .set__title {
+    font-size: 42px;
+  }
+
+  .set__box-text {
+    font-size: 18px;
+  }
+
+  .set__form-input::placeholder {
+    font-size: 14px;
+  }
+
+  .team__card-name {
+    font-size: 20px;
+  }
+
+  .team__interview-quote {
+    font-size: 18px;
+  }
+
+  .team__interview-name {
+    font-size: 20px;
+  }
+
+  .team__interview-text {
+    font-size: 13px;
+  }
+
+  .team__descr-item {
+    padding: 16px;
+  }
+
+  .languages__item-title {
+    font-size: 20px;
+  }
+
+  .reviews__title {
+    max-width: 380px;
+  }
+
+  .adaptation__title {
+    max-width: 380px;
+  }
+
+  .adaptation__box-title {
+    font-size: 20px;
+  }
+
+  .accordion__title {
+    font-size: 20px;
+  }
+
+  .invite__text {
+    font-size: 18px;
+  }
+
+  .invite__person {
+    font-size: 14px;
+  }
+
   .footer__title {
     font-size: 14px;
   }
@@ -1589,6 +1835,74 @@ body {
   .join {
     padding-bottom: 50px;
   }
+
+  .price {
+    padding-bottom: 50px;
+  }
+
+  .discount__inner {
+    padding-bottom: 50px;
+  }
+
+  .set__inner {
+    margin-bottom: 50px;
+  }
+
+  .team__inner {
+    padding-bottom: 50px;
+  }
+
+  .team__descr {
+    padding-top: 32px;
+  }
+
+  .languages {
+    padding-bottom: 50px;
+  }
+
+  .reviews {
+    padding-bottom: 50px;
+  }
+
+  .reviews__box {
+    grid-template-columns: 1fr;
+  }
+
+  .adaptation {
+    padding-bottom: 30px;
+  }
+
+  .tour {
+    padding-bottom: 50px;
+  }
+
+  .tour__bg {
+    max-width: 450px;
+    height: 250px;
+  }
+
+  .tour__video {
+    width: 400px;
+    min-height: 200px;
+    top: 24px;
+    right: 25px;
+  }
+
+  .questions__inner {
+    padding-bottom: 50px;
+  }
+
+  .invite {
+    padding-bottom: 50px;
+  }
+
+  .contacts {
+    margin-bottom: 50px;
+  }
+
+  .contacts__title {
+    margin-bottom: 0;
+  }
 }
 
 @media(max-width: 600px) {
@@ -1603,11 +1917,76 @@ body {
   .methodology__list-title {
     margin-bottom: 12px;
   }
+
+  .price__list-item {
+    grid-template-columns: 5fr 5fr 1.6fr;
+  }
+
+  .price__list-time {
+    display: none;
+  }
+
+  .set__inner {
+    padding: 20px;
+  }
+
+  .set__form-input {
+    max-width: 240px;
+  }
+
+  .set__form-btn {
+    max-width: 240px;
+  }
+
+  .team__inner {
+    column-gap: 20px;
+  }
+
+  .team__interview-img {
+    width: 100px;
+    height: 100px;
+    margin-bottom: 12px;
+  }
+
+  .team__interview-quote {
+    margin-bottom: 8px;
+  }
+
+  .team__interview-name {
+    margin-bottom: 4px;
+  }
+
+  .team__descr {
+    grid-template-columns: 1fr;
+  }
+
+  .languages__item {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .languages__item-img {
+    max-width: 178px;
+    order: 1;
+  }
+
+  .adaptation__box-img {
+    width: 75%;
+    margin-bottom: 10px;
+  }
+
+  .invite__form-btn {
+    max-width: 240px;
+  }
 }
 
 @media(max-width: 550px) {
   .header__tel {
     display: none;
+  }
+
+  .header__menu-list {
+    top: 48.2px;
   }
 
   .promo__title {
@@ -1646,8 +2025,62 @@ body {
     grid-template-columns: 1fr;
   }
 
+  .price__list-item {
+    grid-template-columns: 5fr 1.6fr;
+  }
+
+  .price__list-cost {
+    display: none;
+  }
+
+  .price__links {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .price__online-btn {
+    max-width: 220px;
+    margin: 0 auto;
+  }
+
+  .price__question-btn {
+    margin: 0 auto;
+  }
+
+  .team__inner {
+    display: block;
+  }
+
+  .swiper {
+    display: block;
+    margin: 0 auto 20px;
+  }
+
+  .invite__inner {
+    height: 480px;
+    padding: 16px;
+  }
+
   .footer__text {
     max-width: 315px;
+  }
+}
+
+@media(max-width: 450px) {
+  .tour__bg {
+    max-width: 320px;
+    height: 200px;
+  }
+
+  .tour__video {
+    width: 300px;
+    min-height: 150px;
+    right: 10px;
+  }
+
+  .tour__btn {
+    width: 200px;
+    top: 70px;
   }
 }
 
@@ -1666,6 +2099,10 @@ body {
 
   .header__inner {
     font-size: 11px;
+  }
+
+  .header__menu-list {
+    font-size: 16px;
   }
 
   .promo__title {
@@ -1721,6 +2158,111 @@ body {
     font-size: 18px;
   }
 
+  .price__list-item {
+    padding: 0 20px;
+  }
+
+  .price__list-link {
+    font-size: 11px;
+  }
+
+  .discount__title {
+    font-size: 22px;
+  }
+
+  .discount__text {
+    font-size: 18px;
+  }
+
+  .set__inner {
+    gap: 15px;
+  }
+
+  .set__title {
+    font-size: 28px;
+  }
+
+  .set__box-text {
+    font-size: 16px;
+  }
+
+  .set__form-input::placeholder {
+    font-size: 14px;
+  }
+
+  .team__card-name {
+    font-size: 18px;
+  }
+
+  .team__interview-quote {
+    font-size: 16px;
+  }
+
+  .team__interview-name {
+    font-size: 18px;
+  }
+
+  .team__interview-text {
+    font-size: 11px;
+  }
+
+  .languages__item-title {
+    font-size: 18px;
+  }
+
+  .reviews__box {
+    gap: 16px;
+  }
+
+  .reviews__box-item {
+    padding: 16px;
+  }
+
+  .adaptation__box {
+    gap: 16px;
+  }
+
+  .adaptation__box-title {
+    font-size: 18px;
+  }
+
+  .adaptation__title {
+    max-width: 275px;
+  }
+
+  .accordion__title {
+    padding: 16px 55px 16px 16px;
+    font-size: 18px;
+  }
+
+  .accordion__title::after {
+    right: 10px;
+  }
+
+  .accordion__text-text {
+    padding: 16px;
+  }
+
+  .invite__text {
+    font-size: 16px;
+  }
+
+  .invite__person {
+    font-size: 12px;
+  }
+
+  .contacts__info-address {
+    padding: 16px;
+  }
+
+  .contacts__info-item {
+    padding: 16px;
+  }
+
+  .contacts__info-soc {
+    padding: 26px 26px 26px 60px;
+  }
+
   .footer__title {
     font-size: 12px;
   }
@@ -1760,8 +2302,26 @@ body {
     padding-bottom: 32px;
   }
 
+  .header__menu-list {
+    top: 41.2px;
+  }
+
   .promo__text {
     padding-right: 10px;
+  }
+
+  .tour__bg {
+    max-width: 260px;
+    height: 170px;
+  }
+
+  .tour__video {
+    width: 240px;
+    min-height: 120px;
+  }
+
+  .tour__btn {
+    width: 150px;
   }
 
   .footer__text {

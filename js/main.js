@@ -1,6 +1,6 @@
 const btnUp = {
   el: document.querySelector('.footer__box-btn'),
-  
+
   addEventListener() {
     document.querySelector('.footer__box-btn').onclick = () => {
       window.scrollTo({
@@ -15,27 +15,38 @@ const btnUp = {
 btnUp.addEventListener();
 
 const swiper = new Swiper('.swiper', {
-  slidesPerView: 3,
-      spaceBetween: 16,
+  slidesPerView: 1,
+  spaceBetween: 16,
 
   navigation: {
     nextEl: '.swiper-button-next',
     prevEl: '.swiper-button-prev',
   },
+  breakpoints: {
+    300: {
+      slidesPerView: 1,
+    },
+    901: {
+      slidesPerView: 2,
+    },
+    1201: {
+      slidesPerView: 3,
+    }
+  },
 });
 
-const accordeon = document.querySelector('.accordeon');
-const accordeonTitles = accordeon.querySelectorAll('.accordeon__title');
+const accordion = document.querySelector('.accordion');
+const accordionTitles = accordion.querySelectorAll('.accordion__title');
 
-accordeonTitles.forEach.call(accordeonTitles, function (accordeonTitle) {
-  accordeonTitle.addEventListener('click', function () {
+accordionTitles.forEach.call(accordionTitles, function (accordionTitle) {
+  accordionTitle.addEventListener('click', function () {
 
-    const currentText = accordeonTitle.parentElement.querySelector('.accordeon__text');
+    const currentText = accordionTitle.parentElement.querySelector('.accordion__text');
 
-    accordeonTitle.classList.toggle('accordeon__title--active');
-    currentText.classList.toggle('accordeon__text--visible');
+    accordionTitle.classList.toggle('accordion__title--active');
+    currentText.classList.toggle('accordion__text--visible');
 
-    if (currentText.classList.contains('accordeon__text--visible')) {
+    if (currentText.classList.contains('accordion__text--visible')) {
       currentText.style.maxHeight = currentText.scrollHeight + 'px'
     } else {
       currentText.style.maxHeight = null
