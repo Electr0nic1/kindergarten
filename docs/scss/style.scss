@@ -1,3 +1,5 @@
+@import 'reset';
+
 @font-face {
   font-family: "Circe";
   font-style: normal;
@@ -315,7 +317,7 @@ body {
   justify-content: center;
   align-items: center;
   background-color: #ff9b3f;
-  color: var(--main-white, #FFF);
+  color: #FFF;
   font-weight: 700;
 }
 
